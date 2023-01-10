@@ -1,6 +1,13 @@
 import aws_cdk
+
+from constructs import Construct
+from aws_cdk import App, Stack  # core constructs
+from aws_cdk import aws_s3 as s3  # stable module
+
+
+#Reference: https://github.com/aws/aws-cdk/issues/19118
+
 from aws_cdk import (
-    core,
     aws_ecs as ecs,
     aws_ecr as ecr,
     aws_ecs_patterns as ecs_patterns,
@@ -8,8 +15,8 @@ from aws_cdk import (
 )
 
 
-class AppStack(core.Stack):
-    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+class AppStack(Stack):
+    def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         # Create an ECR repository for storing the Docker images
@@ -52,3 +59,6 @@ class AppStack(core.Stack):
             public_load_balancer=True
         )
 
+
+#** Keyboard Arguments python
+#Deploy the project to aws cdk

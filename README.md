@@ -57,8 +57,9 @@ command.
 
 Enjoy!
 
-
 ## How I did it?
    * python -m pip install -r requirements.txt
 
 ## Move the boring-predictions app here from heroku
+
+## Deployment protocol: https://github.com/marianobrc/scalable-django-apps
